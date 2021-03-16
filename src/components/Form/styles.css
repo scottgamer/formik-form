@@ -11,6 +11,11 @@
   padding: 0.5rem 1rem;
 }
 
+.form__error {
+  margin: 0.5rem;
+  color: orangered;
+}
+
 .btn {
   margin: 1rem 0;
   padding: 0.5rem 0;
