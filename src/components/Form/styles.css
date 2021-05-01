@@ -14,6 +14,14 @@
   padding: 0.5rem 1rem;
 }
 
+.form__group-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.form__group {
+  margin: 0.5rem 0;
+}
+
 .form__error {
   margin: 0.5rem 0;
   color: orangered;
