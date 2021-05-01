@@ -10,7 +10,7 @@ interface FormValues {
   email: string;
   bio: string;
   technologies: [];
-  receive_notifications: boolean;
+  receive_notifications: "";
   coding_frequency: string;
 }
 
@@ -21,7 +21,7 @@ const index = (): JSX.Element => {
     email: "",
     bio: "",
     technologies: [],
-    receive_notifications: false,
+    receive_notifications: "",
     coding_frequency: "",
   };
 
@@ -96,15 +96,65 @@ const index = (): JSX.Element => {
             <ErrorMessage name="bio" component="span" className="form__error" />
           </label>
 
-          {/* <label htmlFor="hobby" className="form__label">
-            Hobby
+          <span className="form__label">Choose your technologies:</span>
+          <div role="group" className="form__group">
+            <label className="form__group-item">
+              Node.js
+              <Field type="checkbox" name="technologies" value="node" />
+            </label>
+            <label className="form__group-item">
+              React
+              <Field type="checkbox" name="technologies" value="react" />
+            </label>
+            <label className="form__group-item">
+              PHP
+              <Field type="checkbox" name="technologies" value="php" />
+            </label>
+            <label className="form__group-item">
+              Firebase
+              <Field type="checkbox" name="technologies" value="firebase" />
+            </label>
+            <ErrorMessage
+              name="technologies"
+              component="span"
+              className="form__error"
+            />
+          </div>
+
+          <label className="form__label">
+            Coding Frequency
+            <Field as="select" name="coding_frequency" className="form__input">
+              <option value="">Select</option>
+              <option value="once_a_week">Once a week</option>
+              <option value="twice_a_week">Twice a week</option>
+              <option value="three_times_a_week">Three times a week</option>
+              <option value="everyday">Everyday</option>
+            </Field>
+            <ErrorMessage
+              name="coding_frequency"
+              component="span"
+              className="form__error"
+            />
           </label>
-          <Field name="hobby" as="select" className="form__input">
-            <option value="hiking">Hiking</option>
-            <option value="biking">Biking</option>
-            <option value="running">Running</option>
-          </Field>
-          <ErrorMessage name="hobby" component="span" className="form__error" /> */}
+
+          <div role="group">
+            <span className="form__label">
+              Do you want to receive notifications?
+            </span>
+            <label>
+              Yes
+              <Field type="radio" name="receive_notifications" value="yes" />
+            </label>
+            <label>
+              No
+              <Field type="radio" name="receive_notifications" value="no" />
+            </label>
+            <ErrorMessage
+              name="receive_notifications"
+              component="span"
+              className="form__error"
+            />
+          </div>
 
           <button type="submit" className="btn">
             Submit!
