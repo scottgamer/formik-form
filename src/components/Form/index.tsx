@@ -8,6 +8,7 @@ interface FormValues {
   firstName: string;
   lastName: string;
   email: string;
+  bio: string;
 }
 
 const index = (): JSX.Element => {
@@ -15,6 +16,7 @@ const index = (): JSX.Element => {
     firstName: "",
     lastName: "",
     email: "",
+    bio: "",
   };
 
   const onSubmit = (values: FormValues) => {
@@ -72,6 +74,27 @@ const index = (): JSX.Element => {
             placeholder="Email"
           />
           <ErrorMessage name="email" component="span" className="form__error" />
+
+          <label htmlFor="bio" className="form__label">
+            Bio
+          </label>
+          <Field
+            name="bio"
+            as="textarea"
+            className="form__input"
+            placeholder="Bio..."
+          />
+          <ErrorMessage name="bio" component="span" className="form__error" />
+
+          {/* <label htmlFor="hobby" className="form__label">
+            Hobby
+          </label>
+          <Field name="hobby" as="select" className="form__input">
+            <option value="hiking">Hiking</option>
+            <option value="biking">Biking</option>
+            <option value="running">Running</option>
+          </Field>
+          <ErrorMessage name="hobby" component="span" className="form__error" /> */}
 
           <button type="submit" className="btn">
             Submit!
