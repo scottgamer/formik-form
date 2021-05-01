@@ -9,6 +9,9 @@ interface FormValues {
   lastName: string;
   email: string;
   bio: string;
+  technologies: [];
+  receive_notifications: boolean;
+  coding_frequency: string;
 }
 
 const index = (): JSX.Element => {
@@ -17,6 +20,9 @@ const index = (): JSX.Element => {
     lastName: "",
     email: "",
     bio: "",
+    technologies: [],
+    receive_notifications: false,
+    coding_frequency: "",
   };
 
   const onSubmit = (values: FormValues) => {
@@ -34,57 +40,61 @@ const index = (): JSX.Element => {
         validationSchema={validationSchema}
       >
         <Form className="form">
-          <label htmlFor="firstName" className="form__label">
+          <label className="form__label">
             First Name
+            <Field
+              name="firstName"
+              type="text"
+              className="form__input"
+              placeholder="First Name"
+            />
+            <ErrorMessage
+              name="firstName"
+              component="span"
+              className="form__error"
+            />
           </label>
-          <Field
-            name="firstName"
-            type="text"
-            className="form__input"
-            placeholder="First Name"
-          />
-          <ErrorMessage
-            name="firstName"
-            component="span"
-            className="form__error"
-          />
 
-          <label htmlFor="lastName" className="form__label">
+          <label className="form__label">
             Last Name
+            <Field
+              name="lastName"
+              type="text"
+              className="form__input"
+              placeholder="Last Name"
+            />
+            <ErrorMessage
+              name="lastName"
+              component="span"
+              className="form__error"
+            />
           </label>
-          <Field
-            name="lastName"
-            type="text"
-            className="form__input"
-            placeholder="Last Name"
-          />
-          <ErrorMessage
-            name="lastName"
-            component="span"
-            className="form__error"
-          />
 
-          <label htmlFor="email" className="form__label">
+          <label className="form__label">
             Email
+            <Field
+              name="email"
+              type="text"
+              className="form__input"
+              placeholder="Email"
+            />
+            <ErrorMessage
+              name="email"
+              component="span"
+              className="form__error"
+            />
           </label>
-          <Field
-            name="email"
-            type="text"
-            className="form__input"
-            placeholder="Email"
-          />
-          <ErrorMessage name="email" component="span" className="form__error" />
 
           <label htmlFor="bio" className="form__label">
             Bio
+            <Field
+              name="bio"
+              as="textarea"
+              className="form__input"
+              placeholder="Bio..."
+            />
+            <ErrorMessage name="bio" component="span" className="form__error" />
           </label>
-          <Field
-            name="bio"
-            as="textarea"
-            className="form__input"
-            placeholder="Bio..."
-          />
-          <ErrorMessage name="bio" component="span" className="form__error" />
 
           {/* <label htmlFor="hobby" className="form__label">
             Hobby
